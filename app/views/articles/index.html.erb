@@ -15,6 +15,11 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
+        <td>
+          <% if article.image? %>
+                <%= image_tag article.image.thumb.url %>
+          <% end %>
+       </td>
         <td><%= article.title %></td>
         <td><%= article.body %></td>
         <td><%= article.author.name %></td>
